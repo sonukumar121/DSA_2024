@@ -1,0 +1,64 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define MAX 5
+int top=-1; //Globally variable.
+int stack_arr[MAX];
+data;
+
+
+void push(int data)
+{
+    if(top==MAX-1)
+    {
+        printf("stack overflow");
+    }
+    top=top+1;
+    stack_arr[top]=data;
+    printf(" %d ",stack_arr[top]);
+    
+}
+int pop()
+{
+    int value;
+    if(top==-1)
+    {
+        printf("stack underflow");
+        exit(1);
+    }
+     value=stack_arr[top];//top=4 ,value=52.
+    top=top-1;//top=3
+    return value;
+   
+    
+    
+    
+}
+void print()
+{
+    int i;
+   if(top==-1) 
+   {
+      printf("stack underflow");
+      return;
+       
+   }
+   for(i=top; i>=0; i--)
+   {
+       printf(" %d ",stack_arr[i]);
+       
+   }
+    
+}
+
+int main()
+{
+    push(11);
+    push(22);
+    push(33);
+    data=pop();
+    print();
+    printf("%d",data);
+    
+    
+    return 0;
+}
