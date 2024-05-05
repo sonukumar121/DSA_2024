@@ -13,8 +13,8 @@ void push(int data)
     {
         printf("stack overflow");
     }
-    top=top+1;
-    stack_arr[top]=data;
+    
+    stack_arr[++top]=data;
     printf(" %d ",stack_arr[top]);
     
 }
@@ -26,8 +26,7 @@ int pop()
         printf("stack underflow");
         exit(1);
     }
-     value=stack_arr[top];//top=4 ,value=52.
-    top=top-1;//top=3
+     value=stack_arr[top--];//top=4 ,value=52. //top=3
     return value;
    
     
@@ -89,6 +88,12 @@ int main()
 }
 }
     
+    
+    
+   
+
+
+
     
     
    
