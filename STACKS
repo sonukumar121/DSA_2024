@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 #include<stdlib.h>
 #define MAX 5
@@ -52,13 +53,45 @@ void print()
 
 int main()
 {
-    push(11);
-    push(22);
-    push(33);
+    int data,choice;
+    printf("1.push\n 2.pop\n 3.print\n 4.EXIT\n");
+    while(1) //till true. 1==>true
+    {
+    printf("enter the choices= ");
+        scanf("%d",&choice);
+
+    switch(choice){
+        
+    
+    case 1:printf("enter the value to push= ");
+    scanf("%d",&data);
+    push(2);
+    push(3);
+    push(4);
+    push(data);
+    break;
+    
+    case 2:
     data=pop();
+    printf(" %d ",data);
+    break;
+    
+    case 3:
     print();
-    printf("%d",data);
+    break;
     
-    
+    case 4:
     return 0;
+    
+    case 5:
+    printf("Invalid choice!\n");
+    }
 }
+}
+    
+    
+    
+   
+
+
+
