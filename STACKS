@@ -70,10 +70,12 @@ int main()
     push(data);
     break;
     
-    case 2:
-    data=pop();
-    printf(" %d ",data);
-    break;
+    case 2:  //  data=pop();
+    //printf(" %d ",data);
+  //  break;
+  pop();
+break;
+
     
     case 3:
     print();
