@@ -1,14 +1,37 @@
 #include<stdio.h>
 #include<stdlib.h>
 void begin_insert()
+       if(null==ptr)
+       {
+           ("stackoverflow")''
+       }
+       else
+    int value;
+   struct node *next;
+    struct node *head;
+    struct node *ptr;
+   ptr=(struct node*)malloc(sizeof(struct node*));
+   
+   printf("enter the value of 1st node which i can enter= ");
+   scanf("%d",&value);
+   
+   ptr->data=value; //value=1.
+   ptr->next=head; //head=adress of the next operator in ptr next.
+   head=ptr; //head=2000.
+   printf("%d",value);
+   
 void last_insert()
+
+
+
+
 void item_anyinsert()
 void delete_begin()
 void delete_fromlast()
 void delte_itemany()
 void search()
 void show()
-void exit()
+void exitX()
 
 
 
@@ -24,35 +47,42 @@ int main()
     
      printf("\n...Choose One Option from the following List...\n");
         printf("\nl.Insert in begining\n2.Insert at last\n3.Insert item at any location\n4.Delete from Beginning\n5.Delete from last\n6.Delete item from any location\n7.Search\n8.Show\n9.Exit\n");
-         while(9!=0){
+         while(choice==8)
+         {
              
         printf("enter the choice=  ");
         scanf("%d",&choice);
         switch(choice)
         {
-            case 1:
+            case 1: begin_insert();
+                    break;
+           case 2: void last_insert();
+                    break;
+            case 3: void delete_begin();
+                    break;
+            case 4:void delete_fromlast();
+                   break;
+            case 5:  void delte_itemany()
+                   break;
+            case 6:void search()
+               break;
+            case 7:void show()
+                    break;
+            case 8:void exitX()
+               break;
         }
+         }
+}
+                    
+   
+
+      
+        
+        
+
+
+        
    
     
         
-        
-    
-    int value;
-   struct node *next;
-    struct node *head;
-    struct node *ptr;
-   ptr=(struct node*)malloc(sizeof(struct node*));
-   
-   printf("enter the value of 1st node which i can enter= ");
-   scanf("%d",&value);
-   
-   ptr->data=value; //value=1.
-   ptr->next=head; //head=adress of the next operator in ptr next.
-   head=ptr; //head=2000.
-   printf("%d",value);
-   
-}
-
-
-}
-}
+  
