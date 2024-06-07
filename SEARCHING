@@ -2,34 +2,32 @@
 
 // LINEAR SERCHING==>SIMPLE METHODS.
 #include<stdio.h>
+// linear searching.
 int main()
 {
-    int a[20],i,j,x,n,c;
+    int a[20],i,j,x,n;
     printf("enter the elements= ");
     for(i=0;i<5;i++)
     {
-         scanf("%d",&a[i]);//6,7,11,2,1. 
+       scanf("%d",&a[i]);  
     }
-  
-
-
-for(i=0;i<5;i++)
-{
-    for(j=i+1;j<5;j++)
-    {
-        if(a[i]>a[j])
-        {
-            c=a[i];
-            a[i]=a[j];
-            a[j]=c;
-        }
-    }
+    printf("enter the searching elemnts= ");
+    scanf("%d",&x);
+   
+   for(i=0;i<5;i++)
+   {
+       if(a[i]==x)
+       {
+           printf("elements is found");
+           break;
+       }
+       if(i==4)
+       {
+           printf("elemets is not found");
+       }
+       
+   }
+ 
+   
 }
-
-for(i=0;i<5;i++)
-{
-  printf("%d,",a[i]);  
-}
-}
-
 
