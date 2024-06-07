@@ -1,6 +1,6 @@
 
 
-// LINEAR SERCHING.
+// LINEAR SERCHING==>SIMPLE METHODS.
 #include<stdio.h>
 int main()
 {
