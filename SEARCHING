@@ -1,1 +1,35 @@
 
+
+// LINEAR SERCHING.
+#include<stdio.h>
+int main()
+{
+    int a[20],i,j,x,n,c;
+    printf("enter the elements= ");
+    for(i=0;i<5;i++)
+    {
+         scanf("%d",&a[i]);//6,7,11,2,1. 
+    }
+  
+
+
+for(i=0;i<5;i++)
+{
+    for(j=i+1;j<5;j++)
+    {
+        if(a[i]>a[j])
+        {
+            c=a[i];
+            a[i]=a[j];
+            a[j]=c;
+        }
+    }
+}
+
+for(i=0;i<5;i++)
+{
+  printf("%d,",a[i]);  
+}
+}
+
+
