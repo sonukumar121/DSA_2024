@@ -67,3 +67,48 @@ int main()
 
 
 
+
+
+
+
+
+
+
+
+
+
+#include<stdio.h>
+int main()
+{
+    int a[20],i,j,x,n,c,min;
+    printf("enter the elements=" );
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    min=a[0];
+    for(x=0;x<n;x++)
+    {
+        for(i=0;i<n;i++)
+        {
+          if(a[i]<a[i+1])
+          {
+              min=a[i];
+              c=a[i];
+              a[i]=min;
+              min=c;
+          }
+          
+        }
+        for(i=0;i<=5;i++)
+        {
+            printf("%d",a[i]);
+        }
+        
+        
+        
+        
+    }
+}
+
+
