@@ -112,3 +112,72 @@ int main()
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//SELECTION SORTINNG
+
+#include<stdio.h>
+int main()
+
+{
+    int a[20],i,j,x,n,min,t;
+    printf("enter the elements= ");
+    for(i=0;i<=6;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    
+    min=a[1];
+    
+    printf("lets find  min elements in array is \n");
+   
+
+    
+   for(x=0;x<=6;x++)
+   {
+    for(i=x+1;i<=6;i++)
+    {
+        if(min<a[i])
+        {
+            continue;
+        }
+        else
+        min=a[i];
+        t=min; //t=1
+    }
+    printf("%d",t);
+    a[x]=t; //a[1]=1
+}
+for(i=0;i<=6;i++)
+{
+   printf("%d",a[i]); 
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
