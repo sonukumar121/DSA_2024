@@ -125,7 +125,6 @@ int main()
 
 
 
-
 //SELECTION SORTINNG
 
 #include<stdio.h>
@@ -156,14 +155,15 @@ int main()
         }
         else
         min=a[i];
-        t=min; //t=1
+        t=i; //t=1
     }
     
     //printf("%d\n",t);
-   c=a[i];
-   a[i]=a[x];
+   c=a[t];
+   a[t]=a[x];
    a[x]=c;
     x=x+1;
+    min=a[x];
 
   }
   for(i=0;i<=6;i++)
