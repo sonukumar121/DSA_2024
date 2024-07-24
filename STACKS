@@ -1,103 +1,98 @@
-
 #include<stdio.h>
-#include<stdlib.h>
-#define MAX 5
-int top=-1; //Globally variable.
-int stack_arr[MAX];
-data;
+#define max 5
+int top=-1;
+int stack[max];
 
-
-void push(int data)
+void push(int item)
 {
-    if(top==MAX-1)
+    if(top==max-1)
     {
         printf("stack overflow");
     }
-    
-    stack_arr[++top]=data;
-    printf(" %d ",stack_arr[top]);
-    
+    else
+    stack[++top]=item;
+    printf("inserted item is= %d",stack[top]);
 }
-int pop()
+
+
+void pop()
 {
-    int value;
+    int item;
     if(top==-1)
     {
         printf("stack underflow");
         exit(1);
+        
     }
-     value=stack_arr[top--];//top=4 ,value=52. //top=3
-    return value;
-   
+    else
+    item= stack[top--];
+    printf("deleted item is= %d",item);
     
     
     
 }
-void print()
+void display()
 {
     int i;
-   if(top==-1) 
-   {
-      printf("stack underflow");
-      return;
-       
-   }
-   for(i=top; i>=0; i--)
-   {
-       printf(" %d ",stack_arr[i]);
-       
-   }
-    
+    for(i=0;i<=top;i++)
+    {
+        printf("%d,",stack[i]);
+    }
 }
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
 
 int main()
 {
-    int data,choice;
-    printf("1.push\n 2.pop\n 3.print\n 4.EXIT\n");
-    while(1) //till true. 1==>true
+    int choice,item;
+    printf("1>push\n 2>pop\n 3>display\n 4>Exit\n");
+    
+    while(1)
     {
-    printf("enter the choices= ");
-        scanf("%d",&choice);
-
-    switch(choice){
-        
-    
-    case 1:printf("enter the value to push= ");
-    scanf("%d",&data);
-    push(2);
-    push(3);
-    push(4);
-    push(data);
-    break;
-    
-    case 2:   data=pop();
-    printf(" %d ",data);
-   break;
-
-
-    
-    case 3:
-    print();
-    break;
-    
-    case 4:
-    return 0;
-    
-    case 5:
-    printf("Invalid choice!\n");
+       printf("enter your choice= "); 
+       scanf("%d",&choice);
+       
+       switch(choice)
+       {
+          case 1:printf("enter the item= ");
+          scanf("%d",&item);
+          push(item);
+          break;
+          
+          
+          case 2: pop();
+          break;
+          
+          
+          case 3:display();
+          break;
+          
+          case 4: return 0;
+          
+          default:
+          printf("invalid choice\n");
+       }
+       
     }
 }
-}
-    
-    
-    
-   
+
 
 
 
     
     
    
-
-
-
