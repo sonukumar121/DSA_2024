@@ -9,11 +9,14 @@
 
 - 🔭 I’m currently working on [Banking Mangement projects](https://github.com/sonukumar121/C_language-2024/blob/main/Projects/Banking_Management_System)
 
+- 🔭 I’m currently working on [School Mangement projects](https://github.com/sonukumar121/C_language-2024/blob/main/Projects/Banking_Management_System)
+
 - 💬 Ask me about **C and Dsa**
 
 - 📫 How to reach me **sonukumar133d@gmail.com**
 
-- ⚡ Fun fact **I think I,believe in more logical,analytical thinking**
+- ⚡ Fun fact **I,Believe in logical and Analytical thinking **
+- ⚡ Fun fact **Strongest Zone->Maths and logical things**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
