@@ -7,7 +7,7 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=sonukumar121" alt="sonukumar121" /></a> </p>
 
-- 🔭 I’m currently working on [Banking Mangement](https://github.com/sonukumar121/C_language-2024/blob/main/Projects/Banking_Management_System)
+- 🔭 I’m currently working on [Banking Mangement projects](https://github.com/sonukumar121/C_language-2024/blob/main/Projects/Banking_Management_System)
 
 - 💬 Ask me about **C and Dsa**
 
