@@ -1,8 +1,7 @@
 [![MasterHead](https://images.pixexid.com/a-focused-coder-rapidly-types-lines-of-code-surrounded-by-streams-of-numbers-d-bt55rgzl.jpeg)
 <h1 align="center">Hi 👋, I'm Mr.Sonu</h1>
 <h3 align="center">A "CODER" from India</h3>
-<h1 align="center">Hi 👋, I'm Mr.Sonu</h1>
-<h3 align="center">A "CODER" from India</h3>
+
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=sonukumar121&label=Profile%20views&color=0e75b6&style=flat" alt="sonukumar121" /> </p>
 
