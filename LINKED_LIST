@@ -79,6 +79,76 @@ int main()
       
         
         
+//#include<stdio.h>
+#include<stdlib.h>
+
+ void  begin_insert()
+ {
+ 	struct node *head,*next,*newcode,*current;
+ 	head=0;
+ 	newcode=(struct node*)malloc(sizeof(struct node));//
+ 	printf("enter the data= ");//5
+ 	scanf("%d",&newcode->data);
+    printf("item insertedd on the 1st node of the data part");//5
+ }
+
+
+struct node
+{
+    int data;
+    struct node *next; //[value | next(address of the next node) ]
+};
+
+
+
+
+
+int main()
+
+{
+    int choice;
+    
+     printf("\n...Choose One Option from the following List...\n");
+        printf("\nl.Insert in begining\n2.Insert at last\n3.Insert item at any location\n4.Delete from Beginning\n5.Delete from last\n6.Delete item from any location\n7.Search\n8.Show\n9.Exit\n");
+         while(choice==8)
+         {
+             
+        printf("enter the choice=  ");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 1: begin_insert();
+                    break;
+           case 2: void last_insert();
+                    break;
+            case 3: void delete_begin();
+                    break;
+            case 4:void delete_fromlast();
+                   break;
+            case 5:  void delte_itemany()
+                   break;
+            case 6:void search()
+               break;
+            case 7:void show()
+                    break;
+            case 8:void exitX()
+               break;
+        }
+         }
+}
+                    
+   
+
+      
+        
+        
+
+
+        
+   
+    
+        
+  
 
 
         
