@@ -9,11 +9,12 @@ struct node
 
 void create()
 {
- node *tmp,*tmp1;
+ struct node *tmp,*tmp1;
  tmp=(struct node*)malloc(sizeof(struct node));
- tmp->next=NULL;
+ 
  printf("enter the data= ");
  scanf("%d",&tmp->data);
+ tmp->next=NULL;
  if(start==NULL)
  {
    start=tmp;	
@@ -39,14 +40,15 @@ void display()
 	else
 	while(tmp!=NULL)
 	{
-		printf("%d",tmp->data);
+		printf(" %d,",tmp->data);
 		tmp=tmp->next;
 	}
 	
 }
 
 
-void insert()
+void beginsert()
+
 
 {
 	struct node *tmp;
@@ -55,10 +57,26 @@ void insert()
 	
 	printf("enter the data= ");
 	scanf("%d",&tmp->data);
-	tmp->next=start;
-	start=tmp;
+	tmp->next=start; //NUll
+	start=tmp; //Start=100
 	printf("\n elements inserted at first node");
 	
+}
+
+void lastinsert()
+{
+struct node *tmp,*tmp1;
+	tmp=(struct node*)malloc(sizeof(struct node));
+	printf("enter the data= ");
+	scanf("%d",&tmp->data);
+	 //NUll
+	 tmp->next=NULL;
+	tmp1=start;
+	while(tmp1->next!=NULL)
+	{
+		tmp1=tmp1->next;
+	}
+	tmp1->next=tmp;
 }
 
 int main()
@@ -67,12 +85,12 @@ int main()
 	int choice;
 	while(1)
 	{
-    printf("\n 1->create list\n 2->display list\n  3->Insert item at the beginning\n 4->exit\n");
+    printf("\n 1->create list\n 2->display list\n  3->Insert item at the beginning\n 4->Insert item from the last position\n 5>Exit\n");
     scanf("%d",&choice);
 	{
 		if(choice==1)
 		{
-		  create();	
+		    create();	
 		}
 		else if(choice==2)
 		{
@@ -80,11 +98,15 @@ int main()
 		}
 		else if(choice==3)
 		{
-		   insert();	
+		   beginsert();	
 		}
 		else if(choice==4)
 		{
-			break;
+			lastinsert();
+		}
+		else if(choice==5)
+		{
+		  break;	
 		}
 		else
 		printf("\n Invalid choice");
@@ -94,113 +116,3 @@ int main()
 }
 
 
-
-///
-
-#include<stdio.h>
-#include<stdlib.h>
-
-struct node
-{
-	int data;
-	struct node *next;
-}*start=NULL;
-
-void create()
-{
-	int item;
- struct node *tmp,*tmp1,*newcode;
- printf("enter the data= ");
- scanf("%d",&item);
- newcode=(struct node*)malloc(sizeof(struct node));
- newcode->data=item;
- newcode->next=NULL;
- 
- if(start==NULL)
- {
-   start=newcode;	
- }	
- else
-  struct node *tmp=start;
-  while(tmp->next!=NULL)
-  {
-  
-   tmp=tmp->next;
-  }
-   tmp->next=newcode;
-}
-
-
-
-void display()
-{
-	struct node *tmp;
-	tmp=start;
-	if(tmp==NULL)
-	{
-		printf("empty");
-	}
-	else
-	while(tmp!=NULL)
-	{
-		printf("%d",tmp->data);
-		tmp=tmp->next;
-	}
-	
-}
-
-
-void insert()
-
-{
-	struct node *tmp;
-	tmp=(struct node*)malloc(sizeof(struct node));
-	tmp->next=NULL;
-	
-	printf("enter the data= ");
-	scanf("%d",&tmp->data);
-	tmp->next=start;
-	start=tmp;
-	printf("\n elements inserted at first node");
-	
-}
-
-int main()
-
-{
-	int choice;
-	while(1)
-{
-    printf("\n 1->create list\n 2->display list\n  3->Insert item at the beginning\n 4->exit\n");
-    scanf("%d",&choice);
-	switch(choice)
-	{
-	
-		case 1:create();	
-		{
-		  
-		  break;
-		}
-		case 2:display();
-		{
-			
-			break;
-		}
-		case 3:insert();
-		{
-		   
-		   break;	
-		}
-		case 4:
-		{
-			exit(1);
-		}
-		default:
-		printf("\n Invalid choice");
-		
-	
-}
-
-}
-return 0;
-}
