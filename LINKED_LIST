@@ -49,7 +49,6 @@ void display()
 
 void beginsert()
 
-
 {
 	struct node *tmp;
 	tmp=(struct node*)malloc(sizeof(struct node));
@@ -78,14 +77,68 @@ struct node *tmp,*tmp1;
 	}
 	tmp1->next=tmp;
 }
+void countnodes()
+{
+	int count=0;
+  	node *tmp;
+	tmp=start;
+	if(tmp==NULL)
+	{
+		printf("zero nodes");
+	}
+	else
+	while(tmp!=NULL)
+	{
+		count=count+1;
+		tmp=tmp->next;
+	}	
+	printf("No.of nodes= %d",count);
+}
 
+void anypInsert()
+
+{
+  int pos;
+  printf("enter the position= ");
+  scanf("%d",&pos);	//pos=2
+  
+  int count=0;
+  	node *tmp;
+	tmp=start;
+	if(tmp==NULL)
+	{
+		printf("zero nodes");
+	}
+	else
+	while(tmp!=NULL)
+	{
+		count=count+1;
+		if(count==pos)
+		{
+			struct node *tmp;
+	        tmp=(struct node*)malloc(sizeof(struct node));
+            tmp->next=NULL;
+	
+         	printf("enter the data= ");
+         	scanf("%d",&tmp->data);
+        	tmp->next=start; //NUll
+	        start=tmp; //Start=100
+	         tmp=tmp->next;
+	         break;
+			
+		}
+		
+	}	
+
+  
+}
 int main()
 
 {
 	int choice;
 	while(1)
 	{
-    printf("\n 1->create list\n 2->display list\n  3->Insert item at the beginning\n 4->Insert item from the last position\n 5>Exit\n");
+    printf("\n 1->create list\n 2->display list\n  3->Insert item at the beginning\n 4->Insert item from the last position\n 5> countnodes\n 6>anypInsert\n 7>Exit\n");
     scanf("%d",&choice);
 	{
 		if(choice==1)
@@ -106,6 +159,15 @@ int main()
 		}
 		else if(choice==5)
 		{
+			countnodes();
+		}
+		else if(choice==6)
+		
+		{
+			anypInsert();
+		}
+		else if(choice==7)
+		{
 		  break;	
 		}
 		else
@@ -114,5 +176,3 @@ int main()
 	}
 }
 }
-
-
