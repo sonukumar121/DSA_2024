@@ -98,37 +98,41 @@ void countnodes()
 void anypInsert()
 
 {
-  int pos;
-  printf("enter the position= ");
-  scanf("%d",&pos);	//pos=2
-  
-  int count=0;
-  	node *tmp;
-	tmp=start;
-	if(tmp==NULL)
-	{
-		printf("zero nodes");
-	}
-	else
-	while(tmp!=NULL)
-	{
-		count=count+1;
-		if(count==pos)
-		{
-			struct node *tmp;
-	        tmp=(struct node*)malloc(sizeof(struct node));
-            tmp->next=NULL;
-	
-         	printf("enter the data= ");
-         	scanf("%d",&tmp->data);
-        	tmp->next=start; //NUll
-	        start=tmp; //Start=100
-	         tmp=tmp->next;
-	         break;
-			
-		}
-		
-	}	
+  int pos,count=0,i;
+  struct node *tmp,*tmp1;
+  tmp=start;
+  while(tmp!=NULL)
+  {
+  	count=count+1;
+  	tmp=tmp->next;
+  }
+  printf("\nEnter position to insert= ");
+  scanf("%d",&pos);
+  if(pos<1||pos>count+1)
+  {
+  	printf("\nInvalid position");
+  }
+  else
+  tmp=(struct node*)malloc(sizeof(struct node));
+  printf("\nEnter the value for new node= ");
+  scanf("%d",&tmp->data);
+  if(pos==1)
+  {
+  	tmp->next=start;
+  	start=tmp;
+  	printf("\nInsertion Sucessfull");
+  }
+  else
+  {
+  	tmp1=start;
+  	for(i=1;i<pos-1;i++)
+  	{
+  		tmp1=tmp1->next;
+  		tmp->next=tmp1->next;
+  		tmp1->next=tmp;
+  		printf("\nAny position inserted dones");
+	  }
+  }
 
   
 }
