@@ -92,3 +92,115 @@ int main()
 	}
 }
 }
+
+
+
+///
+
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node
+{
+	int data;
+	struct node *next;
+}*start=NULL;
+
+void create()
+{
+	int item;
+ struct node *tmp,*tmp1,*newcode;
+ printf("enter the data= ");
+ scanf("%d",&item);
+ newcode=(struct node*)malloc(sizeof(struct node));
+ newcode->data=item;
+ newcode->next=NULL;
+ 
+ if(start==NULL)
+ {
+   start=newcode;	
+ }	
+ else
+  struct node *tmp=start;
+  while(tmp->next!=NULL)
+  {
+  
+   tmp=tmp->next;
+  }
+   tmp->next=newcode;
+}
+
+
+
+void display()
+{
+	struct node *tmp;
+	tmp=start;
+	if(tmp==NULL)
+	{
+		printf("empty");
+	}
+	else
+	while(tmp!=NULL)
+	{
+		printf("%d",tmp->data);
+		tmp=tmp->next;
+	}
+	
+}
+
+
+void insert()
+
+{
+	struct node *tmp;
+	tmp=(struct node*)malloc(sizeof(struct node));
+	tmp->next=NULL;
+	
+	printf("enter the data= ");
+	scanf("%d",&tmp->data);
+	tmp->next=start;
+	start=tmp;
+	printf("\n elements inserted at first node");
+	
+}
+
+int main()
+
+{
+	int choice;
+	while(1)
+{
+    printf("\n 1->create list\n 2->display list\n  3->Insert item at the beginning\n 4->exit\n");
+    scanf("%d",&choice);
+	switch(choice)
+	{
+	
+		case 1:create();	
+		{
+		  
+		  break;
+		}
+		case 2:display();
+		{
+			
+			break;
+		}
+		case 3:insert();
+		{
+		   
+		   break;	
+		}
+		case 4:
+		{
+			exit(1);
+		}
+		default:
+		printf("\n Invalid choice");
+		
+	
+}
+
+}
+return 0;
+}
