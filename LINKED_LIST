@@ -136,13 +136,36 @@ void anypInsert()
 
   
 }
+
+void bdelete()
+{
+	struct node *tmp;
+	tmp=start;
+	start=tmp->next;
+	free(tmp);
+	printf("\n first delete sucessfully");
+}
+void ldelete()
+{
+	struct node *tmp,*tmp1;
+	tmp=start;
+	while(tmp->next->next!=NULL)
+	{
+		tmp=tmp->next;
+	}
+	tmp1=tmp->next;
+	tmp->next=NULL;
+	free(tmp);
+	printf("\n Delete sucessfully");
+}
 int main()
 
 {
 	int choice;
 	while(1)
 	{
-    printf("\n 1->create list\n 2->display list\n  3->Insert item at the beginning\n 4->Insert item from the last position\n 5> countnodes\n 6>anypInsert\n 7>Exit\n");
+    printf("\n1->create list\n2->display list\n3>Insert item at the beginning\n4->Insert item from the last position\n5> countnodes\n6>insert in any positions\n7>delete node from begining\n8>delete node from last\n9>Exit\n");
+    printf("\nEnter your Choice= ");
     scanf("%d",&choice);
 	{
 		if(choice==1)
@@ -171,6 +194,14 @@ int main()
 			anypInsert();
 		}
 		else if(choice==7)
+		{
+		bdelete();
+		}
+		else if(choice==8)
+		{
+		ldelete();	
+		}
+		else if(choice==9)
 		{
 		  break;	
 		}
