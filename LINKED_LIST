@@ -158,13 +158,77 @@ void ldelete()
 	free(tmp);
 	printf("\n Delete sucessfully");
 }
+void linkedsum()
+{
+ int sum=0;
+ struct node *tmp;
+ tmp=start;
+ 
+ while(tmp->next!=NULL)
+ {
+ 	sum=sum+tmp->data;
+ 	tmp=tmp->next;
+ }	
+ printf("\nSum of elements is= %d",sum);
+}
+void alinkedsum()
+{
+	int asum=0;
+  struct node *tmp;
+  tmp=start;
+  while(tmp->next!=NULL)
+  {
+  	tmp=tmp->next;
+  	asum=asum+tmp->data;
+  }	
+  printf("\nAlternate sum of linked list is= %d",asum);
+}
+void searchlinked()
+{
+  int n;
+  struct node *tmp;
+  printf("Enter the searching elementts in linked list= ");
+  scanf("%d",&n);
+  tmp=start;
+  while(tmp->next!=NULL)
+  {
+  	if(tmp->data==n)
+  	{
+  	   printf("\nElements is found in linked list");
+	   break;	
+    }
+    else
+    tmp=tmp->next;
+  }
+  	
+}
+void frequencylinked()
+{
+  int f,count=0;
+    struct node *tmp;
+     printf("Enter the frequency number= ");
+     scanf("%d",&f);
+     while(tmp->next!=NULL)
+     {
+     	if(f==tmp->date)
+     	{
+     		count=count+1;
+     		
+		 }
+		 else
+		 tmp=tmp->next;
+	 }
+	 printf("\nNo.of frquency of=(%d) is", count);
+  	
+}
+
 int main()
 
 {
 	int choice;
 	while(1)
 	{
-    printf("\n1->create list\n2->display list\n3>Insert item at the beginning\n4->Insert item from the last position\n5> countnodes\n6>insert in any positions\n7>delete node from begining\n8>delete node from last\n9>Exit\n");
+    printf("\n1->create list\n2->display list\n3>Insert item at the beginning\n4->Insert item from the last position\n5> countnodes\n6>insert in any positions\n7>delete node from begining\n8>delete node from last\n9>Sum of elements of linked list\n10Sum of alternate elements of linked list\n11>Searching elements in linked list\n12>Frequency of elements in linked list\n13>Exit\n");
     printf("\nEnter your Choice= ");
     scanf("%d",&choice);
 	{
@@ -202,6 +266,24 @@ int main()
 		ldelete();	
 		}
 		else if(choice==9)
+		{
+			linkedsum();
+		}
+			else if(choice==10)
+		{
+		  alinkedsum();	
+		}
+		
+			else if(choice==11)
+		{
+			searchlinked();
+		}
+			else if(choice==12)
+		{
+			frequencylinked();
+		}
+		
+		else if(choice==13)
 		{
 		  break;	
 		}
