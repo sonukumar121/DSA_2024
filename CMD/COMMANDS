@@ -1,1 +1,9 @@
+FOLDER_CREATE-->"mkdir"
+DELETE-->       "del"
+FILE_CREATE-->  "type nul"
+COPY-->         "copy name change name"
+CHECK VERSION-->"ver"
+DIRECTORY-->    "dir"
+SYTEM_INFORMATION-->"systeminfo"
+
 
