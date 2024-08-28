@@ -5,6 +5,13 @@ COPY-->         "copy name change name"
 CHECK VERSION-->"ver"
 DIRECTORY-->    "dir"
 SYTEM_INFORMATION-->"systeminfo"
+ls - List files and directories.
+cd - Change directory.
+pwd - Print working directory.
+mkdir - Create a new directory.
+rm - Remove files and directories.
+cp - Copy files and directories.
+mv - Move or rename files and directories.
 
 //ASSOC          Displays or modifies file extension associations.
 ATTRIB         Displays or changes file attributes.
