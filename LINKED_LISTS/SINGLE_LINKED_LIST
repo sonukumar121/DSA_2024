@@ -9,7 +9,7 @@ struct node
 
 void create()
 {
- struct node *tmp,*tmp1;
+struct node *tmp,*tmp1;
  tmp=(struct node*)malloc(sizeof(struct node));
  
  printf("enter the data= ");
@@ -17,15 +17,23 @@ void create()
  tmp->next=NULL;
  if(start==NULL)
  {
-   start=tmp;	
- }	
+   start=tmp;
+   tmp1=tmp;	
+ }
+ 	
  else
+ {
   tmp1=start;
+  
   while(tmp1->next!=NULL)
+  {
    tmp1=tmp1->next;
-   
+  }
+  
    tmp1->next=tmp;
+  }
 }
+
 
 
 
