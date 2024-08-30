@@ -176,7 +176,11 @@ void linkedsum()
  {
  	sum=sum+tmp->data;
  	tmp=tmp->next;
- }	
+ }
+if(tmp->next==NULL)
+{
+  sum=sum+tmp->data;	
+}
  printf("\nSum of elements is= %d",sum);
 }
 void alinkedsum()
@@ -186,9 +190,16 @@ void alinkedsum()
   tmp=start;
   while(tmp->next!=NULL)
   {
-  	tmp=tmp->next;
-  	asum=asum+tmp->data;
-  }	
+        asum=asum+tmp->data;
+  	tmp=tmp->next->next;
+  	
+  }
+if(tmp->next==NULL)
+{
+  asum=asum+tmp->data;	
+}
+	
+
   printf("\nAlternate sum of linked list is= %d",asum);
 }
 void searchlinked()
@@ -208,25 +219,49 @@ void searchlinked()
     else
     tmp=tmp->next;
   }
+if(tmp->next==NULL)
+{
+ if(tmp->data==n)
+
+printf("element is found in linked list");
   	
+
+else
+printf("element is not found in linked list");
+}
 }
 void frequencylinked()
 {
-  int f,count=0;
+  int key,count=0,s;
     struct node *tmp;
+      tmp=start;
+      if(tmp==NULL)
+      {
+      	printf("n\EMPTY LINKED LIST");
+	  }
+	  else
+  {
+	  
      printf("Enter the frequency number= ");
-     scanf("%d",&f);
+     scanf("%d",&key);
      while(tmp->next!=NULL)
      {
-     	if(f==tmp->date)
+     	if(key==tmp->data)
      	{
+		 
+     	
      		count=count+1;
+     		s=count;
+            tmp=tmp->next;
+            }
+                
+       }
+   }
      		
-		 }
-		 else
-		 tmp=tmp->next;
-	 }
-	 printf("\nNo.of frquency of=(%d) is", count);
+	 		
+    
+
+	 printf("\nNo.of frquency of is=%d", s);
   	
 }
 
