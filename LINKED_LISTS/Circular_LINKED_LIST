@@ -1,79 +1,59 @@
 #include<stdio.h>
 #include<stdlib.h>
-
 struct node
-
 {
-  int data;
-  struct node *next;	
-	
+	int data;
+	struct node *next;
 }*start=NULL;
 
-void binsert()
+void create()
 {
-    struct node *tmp;
-	tmp=(struct node*)malloc(sizeof(struct node));
-	tmp->next=NULL;
-	
-	printf("\nenter the data= ");
-	scanf("%d",&tmp->data);
-	tmp->next=start; //NUll
-	start=tmp; //Start=100
-	printf("\n elements inserted at first node");
-}
+struct node *tmp,*tmp1;
+ tmp=(struct node*)malloc(sizeof(struct node));
+ 
+ printf("enter the data= ");
+ scanf("%d",&tmp->data);
+ tmp->next=NULL;
+ if(start==NULL)
+ {
+   start=tmp;
+   tmp1=tmp;	
+ }
+ 	
+ else
+ {
+  tmp1=start;
+  
+  while(tmp1->next!=NULL)
+  {
+   tmp1=tmp1->next;
+  }
+  
+   tmp1->next=tmp;
+  }
 
-void cslinkedlist()
-{
-	struct node *tmp;
-	tmp=start;
-	while(tmp->next!=NULL)
-	{
-		tmp=tmp->next;
-	}
-	tmp->next=start;
-}
-
-void display()
-{
-	struct node *tmp;
-	tmp=start;
-	if(tmp==NULL)
-	{
-		printf("empty");
-	}
-	else
-	while(tmp!=NULL)
-	{
-		printf(" %d,",tmp->data);
-		tmp=tmp->next;
-	}
-	
-}
-
-
-int main()
-{
-	int choice;
-	
-	 while(1)
-	{
-	printf("\n1>create linked list\n2>create circular linked list\n3>display linked list elements\n4>Exit\n");
-	printf("\nenter your choice= ");
-	scanf("%d",&choice);
-	  if(choice==1)
+struct binsert()
+{//linked
+  int tmp*,*head;
+  while(tmp->next!=NULL)
+  
+  {
+  	tmp=tmp->next;
+	  }	
+	  tmp1=tmp;
+	  tmp->next=start;
+	  tmp=malloc(sizeof(struct node));
+	  tmp1=start;
+	  
+	  //insert
+	  tmp=malloc(sizeof(Struct node));
+	  tmp1=start;
+	  while(tmp1->next!=start)
 	  {
-	  	binsert();
-      }   
-	  else if(choice==2)
-	  {
-	  	cslinkedlist();
-	  }  
-	  else if(choice==3)
-	  {
-	  	display();
+	  	tmp1=tmp1->next;
 	  }
-	  else
-	  printf("\nInvalid choide");
-	}
-	return 0;
+	  tmp->next=start;
+	  head=start;
+	  tmp1->next=tmp;
 }
+
