@@ -1,2 +1,0 @@
-if(s1==s2==s3) -->wrong
-if(s1=s2=s3==0)-->right if s1=s2=s3 have same value.
