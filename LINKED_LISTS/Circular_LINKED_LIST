@@ -9,40 +9,52 @@ struct node
 
 void createcllc()
 {
-    choice:
+    
+ int choice=1;
+ while(choice)
+ {
     	int cho;
-    struct node *newnode,*tmp;
-    newnode=(struct node*)malloc(sizeof(struct node));
+    struct node *tmp,*tmp1;
+    tmp=(struct node*)malloc(sizeof(struct node));
     
     printf("\nEnter the data= ");
-    scanf("%d",&newnode->data);
-   newnode->next=0;
-    if(start=NULL)
+    scanf("%d",&tmp->data);
+    tmp->next=0;
+    if(start==NULL)
     {
-        start=newnode;
-        tmp=newnode;
+        start=tmp;
+        tmp1=tmp;
     }
     else
     {
-        tmp->next=newnode;
-        tmp=newnode;
+        tmp1->next=tmp;
+        tmp1=tmp;
     }
-    tmp->next=start;
-    printf("\nvalue of data of 1st node= %d",tmp->next->data);
+    tmp1->next=start;
+    printf("\nvalue of data of 1st node= %d",tmp1->next->data);
     printf("\n1 for continue 0 for exit");
-    scanf("%d",&cho);
-    if(cho==1)
-    {
-     goto choice;   
-    }
-    else if(cho==0)
-    {
-        exit(1);
-    }
+    scanf("%d",&choice);
    
     
-    
-    
+}
+
+}
+void  display()
+{
+    struct node *tmp1;
+    if(start==NULL)
+    {
+        printf("Empty list");
+    }
+    else
+    {
+        tmp1=start;
+        while(tmp1->next!=start)
+        {
+            printf("%d",tmp1->data);
+            tmp1=tmp1->next;
+        }
+    }
 }
 int main()
 {
@@ -55,9 +67,12 @@ int main()
   switch(ch)
   {
       case 1:createcllc();
-	  break;  
+	  break;
+	  
+	  case 2:display();
+	  break;
   }
   
   
-  }
+   }
 }
