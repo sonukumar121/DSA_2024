@@ -2,58 +2,62 @@
 #include<stdlib.h>
 struct node
 {
-	int data;
-	struct node *next;
+    int data;
+    struct node *next;
+    
 }*start=NULL;
 
-void create()
+void createcllc()
 {
-struct node *tmp,*tmp1;
- tmp=(struct node*)malloc(sizeof(struct node));
- 
- printf("enter the data= ");
- scanf("%d",&tmp->data);
- tmp->next=NULL;
- if(start==NULL)
- {
-   start=tmp;
-   tmp1=tmp;	
- }
- 	
- else
- {
-  tmp1=start;
-  
-  while(tmp1->next!=NULL)
-  {
-   tmp1=tmp1->next;
-  }
-  
-   tmp1->next=tmp;
-  }
-
-struct binsert()
-{//linked
-  int tmp*,*head;
-  while(tmp->next!=NULL)
-  
-  {
-  	tmp=tmp->next;
-	  }	
-	  tmp1=tmp;
-	  tmp->next=start;
-	  tmp=malloc(sizeof(struct node));
-	  tmp1=start;
-	  
-	  //insert
-	  tmp=malloc(sizeof(Struct node));
-	  tmp1=start;
-	  while(tmp1->next!=start)
-	  {
-	  	tmp1=tmp1->next;
-	  }
-	  tmp->next=start;
-	  head=start;
-	  tmp1->next=tmp;
+    choice:
+    	int cho;
+    struct node *newnode,*tmp;
+    newnode=(struct node*)malloc(sizeof(struct node));
+    
+    printf("\nEnter the data= ");
+    scanf("%d",&newnode->data);
+   newnode->next=0;
+    if(start=NULL)
+    {
+        start=newnode;
+        tmp=newnode;
+    }
+    else
+    {
+        tmp->next=newnode;
+        tmp=newnode;
+    }
+    tmp->next=start;
+    printf("\nvalue of data of 1st node= %d",tmp->next->data);
+    printf("\n1 for continue 0 for exit");
+    scanf("%d",&cho);
+    if(cho==1)
+    {
+     goto choice;   
+    }
+    else if(cho==0)
+    {
+        exit(1);
+    }
+   
+    
+    
+    
 }
-
+int main()
+{
+  int ch;
+  while(1)
+  { 
+  printf("\n1>create cllc");
+  printf("\nEnter the choice= ");
+  scanf("%d",&ch); 
+  switch(ch)
+  {
+      case 1:createcllc();
+	  break;  
+  }
+  
+  
+  }
+}
