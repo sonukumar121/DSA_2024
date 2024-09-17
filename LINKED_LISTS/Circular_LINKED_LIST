@@ -122,31 +122,18 @@ void bdelete()
 	printf("element delete sucessfully");
 	start=tmp->next;
 	tmp1->next=tmp->next;	
+	int c=0;
 	}
-   
-	else if(start->next==start)
+	else if(start->next==start && c==0)
 	{
-		c=c+1;
-		if(c==1)
-		{
-			printf("element delete sucessfully");
-			tmp1->data=NULL;
-			c=2;
-			goto sta;
-		}
-		else
-		{
-			
-		start=tmp->next;
-	    tmp1->next=tmp->next;
-		printf("empty list");
-		}
-		
-			
-	}
-	
-	
-
+	 printf("element delete sucessfully");
+	 
+	 
+	 int c=1;
+	  
+    }
+    else
+    printf("Empty list");
 	
 }
 
