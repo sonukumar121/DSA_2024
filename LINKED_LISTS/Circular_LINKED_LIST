@@ -51,17 +51,66 @@ void  display()
         tmp1=start;
         while(tmp1->next!=start)
         {
-            printf("%d",tmp1->data);
+            printf(" %d, ",tmp1->data);
             tmp1=tmp1->next;
         }
+        printf("%d",tmp1->data);
+        
     }
+}
+
+void binsert()
+{
+	struct node *tmp,*tmp1;
+	tmp=(struct node*)malloc(sizeof(struct node));
+	
+	printf("\nEnter the data= ");
+	scanf("%d",&tmp->data);
+	tmp->next=0;
+	tmp->next=start;
+	tmp1=start;
+	while(tmp1->next!=start)
+	{
+		tmp1=tmp1->next;
+	}
+	tmp1->next=tmp;
+	
+}
+void anyinsert()
+{
+	int pos;
+	struct node *tmp,*tmp1;
+	tmp=(struct node*)malloc(sizeof(struct node));
+		printf("\nEnter the position= ");
+	scanf("%d",&pos);
+	printf("\nEnter the data= ");
+	scanf("%d",&tmp->data);
+	
+	tmp->next=0;
+	tmp1=start;
+
+	int i=1;
+	
+	while(i!=pos)
+	{
+		tmp1=tmp1->next;
+		i=i+1;
+		
+	}
+	tmp->next=tmp1;
+	tmp1=start;
+	tmp1->next=tmp;
+}
+void Exit()
+{
+	exit(1);
 }
 int main()
 {
   int ch;
   while(1)
   { 
-  printf("\n1>create cllc");
+  printf("\n1>create cllc\n2>display\n3>insert node new\n4>Insert at any position\n5>Exit\n");
   printf("\nEnter the choice= ");
   scanf("%d",&ch); 
   switch(ch)
@@ -71,6 +120,15 @@ int main()
 	  
 	  case 2:display();
 	  break;
+	  
+	  case 3:binsert();
+	    break;
+	    case 4:anyinsert();
+	    break;
+	    
+      case 5:Exit();
+      break;
+      
   }
   
   
