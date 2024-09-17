@@ -79,7 +79,7 @@ void binsert()
 void anyinsert()
 {
 	int pos;
-	struct node *tmp,*tmp1;
+	struct node *tmp,*tmp1,*tmp2;
 	tmp=(struct node*)malloc(sizeof(struct node));
 		printf("\nEnter the position= ");
 	scanf("%d",&pos);
@@ -98,8 +98,43 @@ void anyinsert()
 		
 	}
 	tmp->next=tmp1;
-	tmp1=start;
-	tmp1->next=tmp;
+	tmp2=start;
+	while(tmp2->next!=tmp1)
+	{
+		tmp2=tmp2->next;
+	}
+	tmp2->next=tmp;
+	
+}
+void bdelete()
+{
+  struct node *tmp,*tmp1;
+  tmp=start;
+  tmp1=start;
+  while(tmp1->next!=start)
+  {
+  	tmp1=tmp1->next;
+    }
+    if(start->next!=start)
+	{
+	printf("element delete sucessfully");
+	start=tmp->next;
+	tmp1->next=tmp->next;	
+		
+	}
+	
+	else
+	{
+		printf("Empty list");
+	}
+	
+
+	
+	
+
+	
+	
+		
 }
 void Exit()
 {
@@ -110,7 +145,7 @@ int main()
   int ch;
   while(1)
   { 
-  printf("\n1>create cllc\n2>display\n3>insert node new\n4>Insert at any position\n5>Exit\n");
+  printf("\n1>create cllc\n2>display\n3>insert node new\n4>Insert at any position\n5Delete from begining\n>6>Exit\n");
   printf("\nEnter the choice= ");
   scanf("%d",&ch); 
   switch(ch)
@@ -125,8 +160,10 @@ int main()
 	    break;
 	    case 4:anyinsert();
 	    break;
+	    case 5:bdelete();
+	    break;
 	    
-      case 5:Exit();
+      case 6:Exit();
       break;
       
   }
