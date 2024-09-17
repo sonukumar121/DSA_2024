@@ -108,6 +108,8 @@ void anyinsert()
 }
 void bdelete()
 {
+	int c=0;
+	sta:
   struct node *tmp,*tmp1;
   tmp=start;
   tmp1=start;
@@ -120,21 +122,37 @@ void bdelete()
 	printf("element delete sucessfully");
 	start=tmp->next;
 	tmp1->next=tmp->next;	
-		
 	}
-	
-	else
+   
+	else if(start->next==start)
 	{
-		printf("Empty list");
+		c=c+1;
+		if(c==1)
+		{
+			printf("element delete sucessfully");
+			tmp1->data=NULL;
+			c=2;
+			goto sta;
+		}
+		else
+		{
+			
+		start=tmp->next;
+	    tmp1->next=tmp->next;
+		printf("empty list");
+		}
+		
+			
 	}
 	
-
-	
 	
 
 	
-	
-		
+}
+
+void ldelete()
+{
+  	
 }
 void Exit()
 {
