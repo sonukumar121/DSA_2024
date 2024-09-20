@@ -52,10 +52,224 @@ void display()
   tmp1=start;
   while(tmp1->next!=start)
   {
-  	printf("%d",tmp1->data);
+  	printf("%d,",tmp1->data);
   	tmp1=tmp1->next;
   }
-  printf("%d",tmp1->data);
+  printf("%d,",tmp1->data);
+}
+
+void nodes()
+{
+	int c=0;
+	struct node *tmp,*tmp1;
+	tmp1=start;
+	while(tmp1->next!=start)
+	{
+	   c=c+1;
+	   tmp1=tmp1->next;
+	}
+	c=c+1;
+	printf("\nNo.of nodes=%d",c);
+}
+
+void search()
+
+{
+    int c=0;
+    int search;
+	struct node *tmp,*tmp1;
+	tmp1=start;
+	printf("\nEnter the searching element= ");
+	scanf("%d",&search);
+	while(tmp1->next!=start)
+	{
+	    if(tmp1->data==search)
+	    {
+	       printf("Element is found");
+		   break;	
+		}
+		tmp1=tmp1->next;
+    }
+    if(tmp1->data==search)
+    {
+    	printf("\nElement is found");
+	}
+	else
+	printf("\nelement is not found");
+}
+
+void freq()
+{
+	int c=0,freq;
+	struct node *tmp,*tmp1;
+	tmp1=start;
+	printf("\nEnter the searching freq of number= ");
+	scanf("%d",&freq);
+	while(tmp1->next!=start)
+	{
+	  if(tmp1->data==freq)
+	  {
+	  	c=c+1;
+	  	
+		  }	
+		  tmp1=tmp1->next;
+	}
+	if(tmp1->data==freq)
+	{
+		c=c+1;
+	}
+	printf("Frequency of %d is %d",freq,c);
+}
+
+void sum()
+{
+	int sum=0;
+struct node *tmp,*tmp1;
+	tmp1=start;
+	while(tmp1->next!=start)
+	{
+		sum=sum+tmp1->data;
+		tmp1=tmp1->next;
+	}
+	sum=sum+tmp1->data;
+	printf("Sum of all the elements is= %d",sum);	
+}
+
+void binsert()
+{
+  struct node *tmp,*tmp1,*tmp2;
+  tmp1=start;
+  tmp2=start;
+  tmp1->prev=tmp;
+  tmp=(struct node*)malloc(sizeof(struct node));
+  printf("\nEnter the data= ");
+  scanf("%d",&tmp->data);
+  tmp->next=tmp1;
+  while(tmp2->next!=start)
+  
+  {
+  	tmp2=tmp2->next;
+  	
+  }
+  tmp1->prev=tmp;
+  tmp->next=tmp1;
+  tmp->prev=tmp2;
+  tmp1=tmp;
+  tmp2->next=tmp;
+  start=tmp1;
+  
+}
+
+void linsert()
+{
+  struct node *tmp,*tmp1;
+  tmp1=start;
+  tmp=(struct node*)malloc(sizeof(struct node));
+  printf("\nEnter the data= ");
+  scanf("%d",&tmp->data);
+  tmp->next=start;
+  tmp1->prev=tmp;
+  while(tmp1->next!=start)
+  {
+  	tmp1=tmp1->next;
+  }
+  tmp1->next=tmp;
+  tmp->prev=tmp1;
+}
+
+void anyinsert()
+{
+   struct node *tmp,*tmp1,*tmp2;
+   int pos,i=1;
+  tmp1=start;
+  tmp2=start;
+  tmp=(struct node*)malloc(sizeof(struct node));
+  printf("\nEnter the position= ");
+  scanf("%d",&pos);
+  printf("\nEnter the data= ");
+  scanf("%d",&tmp->data);
+  while(i!=pos-1)
+  {
+  	tmp2=tmp2->next;
+  	i=i+1;
+  }
+  tmp->prev=tmp2;
+  while(tmp1->prev!=tmp2)
+  {
+  	tmp1=tmp1->next;
+  }
+  tmp->next=tmp1;
+  tmp1->prev=tmp;
+  tmp2->next=tmp;
+  
+  
+}
+
+void bdelete()
+{
+  struct node *tmp,*tmp1,*tmp2;
+  if(start==NULL)
+  {
+  	printf("empty");
+  }
+  tmp1=start;
+  tmp2=start;
+  
+  printf("\nelements deleted ");
+  tmp2=tmp2->next;
+  tmp=tmp2;
+  while(tmp2->next!=start)
+  {
+  	tmp2=tmp2->next;
+  }
+  tmp->prev=tmp2;
+  tmp2->next=tmp;
+  start=tmp;
+}
+
+void ldelete()
+{
+  struct node *tmp1,*tmp2;
+  printf("\nElement deleted from last successfully"); 
+  tmp1=start;
+  tmp2=start;
+  while(tmp1->next!=start)
+  {
+  	tmp1=tmp1->next;
+	  }	
+	  while(tmp2->next!=tmp1)
+	  {
+	  	tmp2=tmp2->next;
+	  }
+	  tmp2->next=start;
+	  start->prev=tmp2;
+	  free(tmp1);
+}
+
+void anydelete()
+{
+    int pos,i=1;
+   struct node *tmp,*tmp1,*tmp2;
+   tmp=start;
+   tmp1=start;
+   tmp2=start;
+   printf("\nELEMENT DELETD");
+   printf("\nEnter the position= ");
+   scanf("%d",&pos);
+   while(i!=pos)
+   {
+      tmp1=tmp1->next; 
+      i=i+1;
+   }
+   while(tmp2->next!=tmp1)
+   {
+       tmp2=tmp2->next;
+   }
+   tmp=tmp1->next;
+   free(tmp1);
+   tmp2->next=tmp;
+   tmp->prev=tmp2;
+   
 }
 int main()
 {
@@ -64,7 +278,7 @@ int main()
     {
         
     
-    printf("\n1>create dccl\n2>display");
+    printf("\n1>create dccl\n2>display\n3>Count no.of nodes\n4>Searching the elements\n5>Frequency of number\n6>Sum of all the numbers\n");
     printf("enter the choice= ");
     scanf("%d",&ch);
     switch(ch)
@@ -73,6 +287,29 @@ int main()
         break;
         case 2:display();
         break;
+        case 3:nodes();
+        break;
+        case 4:search();
+        break;
+        case 5:freq();
+        break;
+        case 6:sum();
+        break;
+        case 7:binsert();
+        break;
+        case 8:linsert();
+        break;
+        case 9:anyinsert();
+        break;
+        case 10:bdelete();
+        break;
+        case 11:ldelete();
+        break;
+        case 12:anydelete();
+        break;
+        
+         
+        
     }
   
         
