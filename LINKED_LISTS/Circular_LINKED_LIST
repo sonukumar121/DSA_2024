@@ -126,20 +126,81 @@ void bdelete()
 	}
 	else if(start->next==start && c==0)
 	{
-	 printf("element delete sucessfully");
+	 printf("\nelement delete sucessfully");
 	 
 	 
 	 int c=1;
 	  
     }
     else
-    printf("Empty list");
+    printf("\nEmpty list");
 	
 }
 
-void ldelete()
+void nodes()
 {
-  	
+	int c=0;
+	struct node *tmp1,*tmp;
+	tmp1=start;
+	while(tmp1->next!=start)
+	{
+		c=c+1;
+		tmp1=tmp1->next;
+	}
+	c=c+1;
+	printf("\nNo.of nodes=%d",c);
+}
+
+void searching()
+{
+	struct node *tmp1,*tmp;
+	int search;
+	tmp1=start;
+	printf("\nEnter the searching elements= ");
+	scanf("%d",&search);
+	while(tmp1->next!=start)
+	
+	{
+		if(tmp1->data==search)
+		{
+			printf("\nElement is found");
+			break;
+		}
+		else
+		tmp1=tmp1->next;
+	}
+	if(tmp1->data==search)
+	{
+		printf("\nElement is found");
+	}
+	else
+	printf("\nElement is not found");
+	
+	
+}
+
+void frequency()
+{
+	struct node *tmp1,*tmp;
+	int feq;
+	int c=0;
+	printf("\nEnter the frquency number= ");
+	scanf("%d",&feq);
+	tmp1=start;
+	while(tmp1->next!=start)
+	{
+		if(tmp1->data==feq)
+		{
+			c=c+1;
+			
+		}
+		tmp1=tmp1->next;
+	}
+	if(tmp1->data==feq)
+	{
+		c=c+1;
+	}
+	printf("\nFrequecy of = %d is %d",feq,c);
 }
 void Exit()
 {
@@ -150,7 +211,7 @@ int main()
   int ch;
   while(1)
   { 
-  printf("\n1>create cllc\n2>display\n3>insert node new\n4>Insert at any position\n5Delete from begining\n>6>Exit\n");
+  printf("\n1>create cllc\n2>display\n3>insert node new\n4>Insert at any position\n5>Delete from begining\n6>count no.of nodes\n7>searching the elements\n8>frequency of elements\n9>Exit\n");
   printf("\nEnter the choice= ");
   scanf("%d",&ch); 
   switch(ch)
@@ -167,9 +228,14 @@ int main()
 	    break;
 	    case 5:bdelete();
 	    break;
-	    
-      case 6:Exit();
-      break;
+	    case 6:nodes();
+	    break;
+	    case 7:searching();
+	    break;
+	    case 8:frequency();
+	    break;
+        case 9:Exit();
+        break;
       
   }
   
