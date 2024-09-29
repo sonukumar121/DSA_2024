@@ -1,0 +1,95 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node 
+{
+    struct node *left;
+    int data;
+    struct node *right;
+}*start=NULL;
+
+struct node create()
+{
+	int choose=1;
+	while(choose)
+	{
+	
+    int x;
+    struct node *tmp;
+    tmp=(struct node*)malloc(sizeof(struct node));
+    if(start==NULL)
+    {
+    	start=tmp;
+	}
+    printf("\nEnter the data= ");
+    scanf("%d",&x);
+    
+    if(x==0)
+    {
+     	
+     return 0;   
+    }
+     tmp->data=x;
+    printf("\nEnter the left  child of  %d",x);
+    tmp->left=create();
+    printf("\nEnter the right child of  %d",x);
+    tmp->right=create();
+    printf("\n1> for continue 0 for exit");
+    scanf("%d",&choose);
+    
+}
+    
+}
+void display()
+{
+	struct node *tmp1,*tmp2;
+	tmp1=start;
+	tmp2=start;
+	char c;
+	char l;
+	printf("\nEnter L of print all left node elements:");
+	printf("%c",&c);
+	
+	if(c==l)
+	{
+		while(tmp1->data!=0)
+	{
+	  printf("%d",tmp1->data);
+	  tmp1=tmp1->left;	
+	}	
+	}
+else
+{
+
+	while(tmp2->data!=0)
+	{
+		printf("%d",tmp2->data);
+		tmp2=tmp2->right;
+	}	
+}
+
+}
+int  main()
+{
+	int choice;
+    struct node *root;
+    while(1)
+    {
+    	
+	printf("\n1>create blt\n2>display");
+    printf("\nEnter your choice= ");
+    scanf("%d",&choice);
+    switch(choice)
+    {
+     case 1:  create();
+	 
+	 break;
+	 
+	 case 2:display();
+	 break;	
+	}
+    
+   
+  }  
+    return 0;
+}
+
