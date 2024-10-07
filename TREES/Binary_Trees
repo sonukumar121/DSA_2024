@@ -24,11 +24,46 @@ struct node *create()
     tmp->right=create();
     return tmp;
 }
+
+void preorder(struct node *start)
+{
+    if(start==0)
+    {
+        return;
+    }
+    printf("%d",start->data);
+    preorder(start->left);
+    preorder(start->right);
+}
+
+void inorder(struct node *start)
+
+{
+    if(start==0)
+    {
+        return;
+    }
+    inorder(start->left);
+    printf("%d",start->data);
+    inorder(start->right);
+}
+
+void postorder(struct node *start)
+
+{
+    postorder(start->left);
+    postorder(start->right);
+    printf("%d",start->data);
+}
+
+
 void main()
 {
     struct node *start,*tmp1;
     start=0;
     start=create();
+    preorder(start);
+    //inorder(start);
+    //postorder(start);
     
 }
-
