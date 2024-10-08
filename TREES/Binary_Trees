@@ -1,10 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
+int c=0;
 struct node
 {
     int data;
     struct node *left,*right;
 };
+
 
 struct node *create()
 {
@@ -51,19 +53,101 @@ void inorder(struct node *start)
 void postorder(struct node *start)
 
 {
+    if(start==0)
+    {
+        return;
+    }
     postorder(start->left);
     postorder(start->right);
     printf("%d",start->data);
 }
 
+struct node *searching(struct node *root,struct node *search)
+{
+    struct node *tmp1;
+  if(root==0)
+  {
+      return;
+  }
+  tmp1=root;//100
+  if(tmp1->data==search)
+  
+  {
+     printf("\nElement is found");
+     
+     
+  }
+  searching(tmp1->left,search);
+  searching(tmp1->right,search);
+}
+struct node *maximum(struct node *root)
 
+{
+   int max=root->data;
+   struct node *tmp1;
+   
+   if(root==0)
+   {
+       return;
+   }
+  
+   if(max<root->data)
+   {
+       max=root->data;
+   }
+   else
+   {
+       maximum(tmp1->left);
+       maximum(tmp1->right);
+   }
+   
+   
+   
+}
 void main()
 {
-    struct node *start,*tmp1;
-    start=0;
-    start=create();
-    preorder(start);
-    //inorder(start);
-    //postorder(start);
+    struct node *start,*tmp1,*search;
+    int ch;
+    while(1)
+    {
+    printf("\n1>Create Binary tree\n2>Display elements in Preorder\n3>Display elements in Inorder\n4>Display elements in Postorder\n5>Searching the elements");
+    printf("\nEnter your Choices: ");
+    scanf("%d",&ch);
+    switch(ch)
+    {
+         
+        case 1: start=0;
+                start=create();
+                break;
+                
+        case 2:preorder(start);
+        break;
+       
+        case 3:inorder(start);
+        break;
+        
+        case 4: postorder(start);
+        break;
+   
+       case 5:printf("\nEnter the searching elements: ");
+             scanf("%d",&search);
+             start=searching(start,search);
+             printf("%d",start);
+             break;
     
+       case 6: int max;
+      
+       max=maximum(start);
+       printf("Maximum value in binary tree is=%d",max);
+       
+              break;
+    
+    
+   
+    
+   
+    }
+   
+    
+}
 }
