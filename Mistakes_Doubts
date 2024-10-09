@@ -2,3 +2,4 @@ if(s1==s2==s3) -->wrong
 if(s1=s2=s3==0)-->right if s1=s2=s3 have same value.
 all symbols-->doubts(functions)-->\n,\t,\b..
 %2f,3f,2d....-->use (functions);
+. dot operator use to enter the value,or data but ->assign operator to acess the value which are enter by user.
