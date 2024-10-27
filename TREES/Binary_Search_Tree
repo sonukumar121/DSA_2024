@@ -1,1 +1,78 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node 
+{
+    int data;
+    struct node *left,*right;
+}*root=0;
+
+//create node
+struct node *createnode(int key)
+{
+  struct node *tmp;
+  tmp=(struct node*)malloc(sizeof(struct node));
+  tmp->data=key;
+  tmp->left=NULL;
+  tmp->right=NULL;
+  return tmp;
+}
+//value compare
+struct node *insert(struct node *root,int key)
+{
+    if(root==NULL)
+    {
+        return createnode(key);
+    }
+    if(key < root->data)
+    {
+      root->left=insert(root->left,key);  //check if(root->left==0)
+    }
+    else if(key > root->data)
+    {
+        root->right=insert(root->right,key);
+    }
+    return root;
+}
+void searching(int sea)
+{
+  struct node *tmp1;
+  tmp1=root;
+  while(tmp1->left!=NULL || tmp1->right!=NULL)
+  {
+  if(sea==tmp1->data)
+  {
+      printf("\nElements is Found");
+      break
+  }
+  else if(sea < tmp1->data)
+  {
+      tmp1=tmp1->left;
+  }
+  else
+  {
+      tmp1=tmp1->right;
+  }
+  
+}
+}
+ 
+v
+
+
+int main()
+{
+	
+	root=0;
+	root=insert(root,50);//All root value at the end from the retutn root from the insert fn so recursively root will be base node .
+	insert(root,40);
+	insert(root,30);
+
+	insert(root,70);
+
+	insert(root,20);
+	 //inOrderTraversal(root);
+	//display(root);
+	searching(30);
+  return 0;
+}
 
