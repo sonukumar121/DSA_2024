@@ -76,3 +76,222 @@ int main()
   return 0;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+	int data;
+	struct node *left,*right;
+}*root=0;
+
+//create node
+struct node *createnode(int key)
+{
+	struct node *tmp;
+	tmp=(struct node*)malloc(sizeof(struct node));
+	tmp->data=key;
+	tmp->left=NULL;
+	tmp->right=NULL;
+	return tmp;
+}
+//value compare
+struct node *insert(struct node *root,int key)
+{
+	if(root==NULL)
+	{
+		return createnode(key);
+	}
+	if(key < root->data)
+	{
+		root->left=insert(root->left,key);  //check if(root->left==0)
+	}
+	else if(key > root->data)
+	{
+		root->right=insert(root->right,key);
+	}
+	return root;
+}
+void preorder(struct node *root)
+{
+	if(root==0)
+	{
+		return;
+	}
+	printf("%d",root->data);
+	preorder(root->left);
+	preorder(root->right);
+}
+
+void inorder(struct node *root)
+
+{
+	if(root==0)
+	{
+		return;
+	}
+	inorder(root->left);
+	printf("%d",root->data);
+	inorder(root->right);
+
+}
+
+void postorder(struct node *root)
+
+{
+	if(root==0)
+	{
+		return;
+	}
+	postorder(root->left);
+
+	postorder(root->right);
+	printf("%d",root->data);
+
+}
+
+int  searching(struct node *root,int search)
+
+{	int c=0;
+
+	if(root==0)
+	{
+		return;
+	}
+
+	if(search==root->data)
+	{
+		c=c+1;
+		printf("\nElements is found:");
+		exit(1);
+	}
+
+	else if(search < root->data)
+	{
+		searching(root->left,search);
+		searching (root->right,search);
+	}
+
+	else
+	{
+		searching(root->left,search);
+		searching (root->right,search);
+	}
+	return c;
+}
+
+
+
+int largest(struct node *root,int max)
+{
+
+	if(root==0)
+	{
+		return;
+	}
+
+
+	if(max < root->data)
+	{
+		max=root->data;
+		searching(root->left,max);
+		searching (root->right,max);
+	}
+
+	else
+	{
+
+		searching (root->right,max);
+		searching(root->left,max);
+	}
+	return max;
+}
+int main()
+{
+	int choose,max,min;
+	struct node *root;
+
+	while(1)
+	{
+		printf("\n1>Create bst\n2>Display in preorder\n3>Display in inorder\n3>Display in postorder\n4>Searching Elements\n5>Searching the Largest elements in bst\n6>Searching the smallest elements in bst");
+		scanf("%d",&choose);
+		switch(choose)
+		{
+		case 1:
+			int search,x;
+			root=0;
+			root=insert(root,50);//All root value at the end from the retutn root from the insert fn so recursively root will be base node .
+			insert(root,40);
+			insert(root,30);
+			insert(root,70);
+			insert(root,20);
+			max=root->data;
+			min=root->data;
+			break;
+
+
+		case 2:
+			preorder(root);
+			printf("\n");
+			break;
+
+
+		case 3:
+			inorder(root);
+			printf("\n");
+			break;
+
+
+		case 4:
+			postorder(root);
+			break;
+
+
+		case 5:
+			printf("\nEnter the searching elements: ");
+			scanf("%d",&search);
+			x=searching(root,search);
+			if(x!=1)
+			{
+				printf("\nElements is not found");
+			}
+			break;
+
+
+		case 6:
+			max=largest(root,max);
+			printf("\nLargest elements in BST is: %d",max);
+			break;
+
+
+		/*case 7:
+			smallest(root,min);
+			break;
+			return 0;*/
+		default:
+			printf("Invalid choice Try! again");
+
+		}
+	}
+}
+
+
+
