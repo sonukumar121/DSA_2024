@@ -1,1 +1,96 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node 
+{
+    int data;
+    struct node *left,*right;
+}*root=0;
+
+//create node
+struct node *createnode(int key)
+{
+  struct node *tmp;
+  tmp=(struct node*)malloc(sizeof(struct node));
+  tmp->data=key;
+  tmp->left=NULL;
+  tmp->right=NULL;
+  return tmp;
+}
+//value compare
+struct node *insert(struct node *root,int key)
+{
+    if(root==NULL)
+    {
+        return createnode(key);
+    }
+    if(key < root->data)
+    {
+      root->left=insert(root->left,key);  //check if(root->left==0)
+    }
+    else if(key > root->data)
+    {
+        root->right=insert(root->right,key);
+    }
+    return root;
+}
+void searching(int sea)
+{
+  struct node *tmp1;
+  tmp1=root;
+  while(tmp1->left!=NULL || tmp1->right!=NULL)
+  {
+  if(sea==tmp1->data)
+  {
+      printf("\nElements is Found");
+      break;
+  }
+  else if(sea < tmp1->data)
+  {
+      tmp1=tmp1->left;
+  }
+  else
+  {
+      tmp1=tmp1->right;
+  }
+  
+}
+}
+ 
+struct node *balanced (struct node *root,int h1,int h2)
+{
+    int c;
+    if(root==0)
+    {
+        return h1;//one step before.
+    }
+    
+    else
+    {
+        
+       h1=balanced(root->left,h1+1,h2);//h1=4
+       h2=balanced(root->right,h1,h2+1);
+      
+    }
+ 
+  return h1;//return value the  fn till before from bottom to top. 
+}
+
+int main()
+{
+	int h1=0,h2=0,c;
+	root=0;
+	root=insert(root,50);//All root value at the end from the retutn root from the insert fn so recursively root will be base node .
+	insert(root,40);
+	insert(root,30);
+
+	insert(root,20);
+
+	insert(root,70);
+	 //inOrderTraversal(root);
+	//display(root);
+	searching(30);
+	c=balanced(root,h1,h2);
+	printf("\nvalue of h1 and h2=%d %d",c,h2);
+  return 0;
+}
 
