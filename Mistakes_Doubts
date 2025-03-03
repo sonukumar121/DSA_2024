@@ -4,3 +4,4 @@ all symbols-->doubts(functions)-->\n,\t,\b..
 %2f,3f,2d....-->use (functions);
 . dot operator use to enter the value,or data but ->assign operator to acess the value which are enter by user.
 if you compare (a[i]==4) letus any conditon char a[100] define over here. but you cant compare char with intger.so you should convert int tnto char.
+binary search use only when arrays,vector in sorted form
